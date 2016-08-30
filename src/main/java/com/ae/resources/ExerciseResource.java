@@ -43,8 +43,8 @@ public class ExerciseResource {
     @GET
     @Path("/{id}")
     public Response show(@PathParam("id") Integer id) {
-        Exercise exercise = exerciseDAO.findById(id);
-        if (exercise != null) {
+        Optional<Exercise> exercise = exerciseDAO.findById(id);
+        if (exercise.isPresent()) {
             return Response.status(Response.Status.OK).entity(exercise).build();
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();

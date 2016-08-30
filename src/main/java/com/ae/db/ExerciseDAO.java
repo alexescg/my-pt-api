@@ -20,7 +20,7 @@ public interface ExerciseDAO {
     void insert(@Bind("name") String name, @Bind("description") String description);
 
     @SqlQuery("select * from exercise where id = :id")
-    Exercise findById(@Bind("id") int id);
+    Optional<Exercise> findById(@Bind("id") int id);
 
     @SqlQuery("select * from exercise")
     List<Exercise> all();

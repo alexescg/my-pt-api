@@ -32,7 +32,7 @@ public class PersonResourceTest {
     @Before
     public void setup() {
         dao.insert(ExerciseConstants.EXERCISE_NAME, ExerciseConstants.EXERCISE_DESCRIPTION);
-        when(dao.findById(0)).thenReturn(exercise);
+        when(dao.findById(0)).thenReturn(java.util.Optional.ofNullable(exercise));
     }
 
     @After
