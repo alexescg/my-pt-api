@@ -2,20 +2,25 @@ package com.ae.api.model;
 
 import java.util.List;
 
+
 /**
- * Created by alex on 8/26/16.
+ * Entity representation of a Workout.
+ *
+ * @author alexescg
+ * @version 1.0
+ * @since 8/26/16.
  */
 public class Workout {
 
     private Long id;
 
-    private List<Set> exercises;
+    private List<ExerciseRow> exercises;
 
     public Workout() {
 
     }
 
-    public Workout(Long id, List<Set> exercises) {
+    public Workout(Long id, List<ExerciseRow> exercises) {
         this.id = id;
         this.exercises = exercises;
     }
@@ -24,7 +29,7 @@ public class Workout {
         return id;
     }
 
-    public List<Set> getExercises() {
+    public List<ExerciseRow> getExercises() {
         return exercises;
     }
 }

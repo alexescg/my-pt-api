@@ -4,7 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 
 /**
- * Created by alex on 8/26/16.
+ * Entity representation of an Exercise.
+ *
+ * @author alexescg
+ * @version 1.0
+ * @since 8/26/16.
  */
 public class Exercise {
 
@@ -13,12 +17,15 @@ public class Exercise {
     @Length(max = 25)
     private String name;
 
+    @Length(max = 100)
+    private String description;
+
     public Exercise() {
     }
 
-    public Exercise(long id, String name) {
-        this.id = id;
+    public Exercise(String name, String description) {
         this.name = name;
+        this.description = description;
     }
 
     @JsonProperty
@@ -29,5 +36,20 @@ public class Exercise {
     @JsonProperty
     public String getName() {
         return name;
+    }
+
+    @JsonProperty
+    public String getDescription() {
+        return description;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Exercise{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

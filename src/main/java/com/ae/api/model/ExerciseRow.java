@@ -1,9 +1,13 @@
 package com.ae.api.model;
 
 /**
- * Created by alex on 8/26/16.
+ * Entity representation of an ExerciseRow.
+ *
+ * @author alexescg
+ * @version 1.0
+ * @since 8/26/16.
  */
-public class Set {
+public class ExerciseRow {
 
     private Long id;
 
@@ -15,10 +19,10 @@ public class Set {
 
     private Integer repMax;
 
-    public Set() {
+    public ExerciseRow() {
     }
 
-    public Set(Long id, Integer reps, Integer sets, Integer repMin, Integer repMax) {
+    public ExerciseRow(Long id, Integer reps, Integer sets, Integer repMin, Integer repMax) {
         this.id = id;
         this.reps = reps;
         this.sets = sets;
